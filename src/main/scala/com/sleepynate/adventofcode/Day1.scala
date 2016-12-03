@@ -49,8 +49,15 @@ trait Day1 {
       }
     }
 
-    def go(d: Direction): Location = {
-      turn(d._1).move(d._2)
+    def go(d: Direction): List[Location] = {
+      def f(n:Int, curr: Location, locs: List[Location]): List[Location] = n match {
+        case 0 => locs
+        case o =>
+          f(o - 1, curr.move(1), curr.move(1) :: locs)
+      }
+
+      val turnt = turn(d._1)
+      f(d._2, turnt, List.empty[Location]).reverse
     }
   }
 
@@ -70,10 +77,10 @@ trait Day1 {
   }
 
   case class LocationHistory(current: Location, history: List[Location]) {
-    def add(location: Location) = {
-      if (history.exists(l => l.x == location.x && l.y == location.y)) println(s"duplicate at ${location}")
-      else println(s"adding new point ${location}")
-      copy(current = location, history = history :+ current)
+    def add(locations: List[Location]) = {
+      locations.foldLeft(this) { (hist: LocationHistory, l:Location) =>
+        hist.copy(current = l, history = hist.current :: hist.history)
+      }
     }
   }
 
@@ -81,9 +88,8 @@ trait Day1 {
     val start = LocationHistory(Location(0, 0, North), List.empty[Location])
     directions.foldLeft(start) {
       (history: LocationHistory, direction:String) =>
-        val location = direction |> parseDirection |> history.current.go
-        println(location)
-        history.add(location)
+        val locations:List[Location] = direction |> parseDirection |> history.current.go
+        history.add(locations)
     }
   }
 
