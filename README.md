@@ -19,15 +19,6 @@ the appropriate version of Scala as needed.
 
     `sbt test`
 
-- To get an answer for a specific day, append the appropriate day to
-  the package name `com.sleepynate.adventofcode.`, for example, to
-  print Day 1's answer, you'd use:
-
-    `sbt "run-main com.sleepynate.adventofcode.Day1"`
-
-- Or, you could just be wild and run `sbt run` and see what happens
-
-
 Happy holiday hacking!
 
 - [@sleepynate](http://github.com/sleepynate)
