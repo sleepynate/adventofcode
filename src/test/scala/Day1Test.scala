@@ -48,7 +48,6 @@ class Day1Test extends FlatSpec with Matchers {
   "longer directions" should "give a distance in blocks" in {
     new Day1 {
       val loc = parseThatInputYo("R5, L5, R5, R3") |> followDirections
-      println(loc)
       distanceFromOrigin(loc.current) should be (12)
     }
   }
