@@ -18,7 +18,7 @@ class Day2Test extends FlatSpec with Matchers {
     }
   }
 
-  "first solution" should "provide the bathroom code" in {
+  "first solution" should "provide the bathroom code" ignore {
     new Day2 {
       val code = getInput |> followInstructions(PhoneFive)
       code should be (List.empty[Key])
@@ -32,7 +32,7 @@ class Day2Test extends FlatSpec with Matchers {
     }
   }
 
-  "part 2 solution" should "so i can potty" in {
+  "part 2 solution" should "so i can potty" ignore {
     new Day2 {
       val code = getInput |> followInstructions(PottyFive)
       code should be (List.empty[Key])

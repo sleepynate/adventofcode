@@ -52,7 +52,7 @@ class Day1Test extends FlatSpec with Matchers {
     }
   }
 
-  "step one solution" should "be correct i guess" in {
+  "step one solution" should "be correct i guess" ignore {
     new Day1 {
       val distance = getInput |>
                      parseThatInputYo |>
@@ -85,7 +85,7 @@ class Day1Test extends FlatSpec with Matchers {
     }
   }
 
-  "step two solution" should "be a real pain in the butt" in {
+  "step two solution" should "be a real pain in the butt" ignore {
     new Day1 {
       val h = (getInput |> parseThatInputYo |> followDirections).history
       val loc = h.reverse.collectFirst {
