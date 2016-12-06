@@ -1,3 +1,5 @@
+package com.sleepynate.adventofcode.test
+
 import com.sleepynate.adventofcode.Day3
 import com.sleepynate.adventofcode.util.PipeOps._
 import org.scalatest.{FlatSpec, Matchers}
