@@ -33,9 +33,9 @@ class Day5Test extends FlatSpec with Matchers {
     }
   }
 
-  "part 2 test case" should "provide given password" in {
+  "part 2 test case" should "provide given password" ignore {
     new Day5 {
-      val password = zeroHashes("abc", s => s.startsWith("00000") && s.charAt(5) >= '0' && s.charAt(5) < '8')
+      def password = zeroHashes("abc", s => s.startsWith("00000") && s.charAt(5) >= '0' && s.charAt(5) < '8')
       val passString = foldUntil8(password).sortBy(_._1).map(_._2).mkString
 
       passString should be("05ace8e3")
@@ -44,7 +44,7 @@ class Day5Test extends FlatSpec with Matchers {
 
   "part 2 actual" should "provide given password" ignore {
     new Day5 {
-      val password =  zeroHashes("ffykfhsq", s => s.startsWith("00000") && s.charAt(5) >='0' && s.charAt(5) < '8')
+      def password =  zeroHashes("ffykfhsq", s => s.startsWith("00000") && s.charAt(5) >='0' && s.charAt(5) < '8')
       val passString = foldUntil8(password).sortBy(_._1).map(_._2).mkString
       println(passString)
 
