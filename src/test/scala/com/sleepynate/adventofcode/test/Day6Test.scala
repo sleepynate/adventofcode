@@ -1,7 +1,7 @@
 package com.sleepynate.adventofcode.test
 
-import com.sleepynate.adventofcode.util.PipeOps._
 import com.sleepynate.adventofcode.Day6
+import com.sleepynate.adventofcode.util.PipeOps._
 import org.scalatest.{FlatSpec, Matchers}
 
 class Day6Test extends FlatSpec with Matchers {
