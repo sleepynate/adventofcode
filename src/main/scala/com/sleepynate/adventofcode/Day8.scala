@@ -50,7 +50,7 @@ trait Day8 {
     override def toString: String = {
       (0 until y).map { row =>
         (0 until x).map { col =>
-          if (onPixels.contains(Pixel(col, row))) '*'
+          if (onPixels.contains(Pixel(col, row))) 182.toChar
           else ' '
         }.mkString
       }.mkString("\n")
